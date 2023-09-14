@@ -1,0 +1,8 @@
+.footer {
+  display: relative;
+  bottom: 0;
+}
+.Footers:hover {
+  color: #aba2fd !important;
+  font-weight: bold;
+}
