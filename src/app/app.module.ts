@@ -11,9 +11,13 @@ import { DemoModuleModule } from './demo-module/demo-module.module';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
+import {
+  HTTP_INTERCEPTORS,
+  HttpClient,
+  HttpClientModule,
+} from '@angular/common/http';
 import { SpinnerComponent } from './shared-module/components/spinner/spinner.component';
-import { LoaderInterceptor } from 'src/interceptors/interceptors/loader.interceptor';
+import { HttpInterceptInterceptor } from 'src/interceptors/http-intercept.interceptor';
 
 export function createtranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
@@ -41,9 +45,9 @@ export function createtranslateLoader(http: HttpClient) {
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: LoaderInterceptor,
-      multi: true
-    }
+      useClass: HttpInterceptInterceptor,
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent],
   exports: [TranslateModule],

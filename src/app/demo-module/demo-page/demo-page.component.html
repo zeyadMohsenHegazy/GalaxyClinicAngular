@@ -5,31 +5,30 @@
             <app-sidebar></app-sidebar>
         </div>
         <div class="col-9 p-2">
-            <p class="h3">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus eveniet consectetur beatae voluptas
-                quam
-                perspiciatis maxime a quisquam laborum, error quo tempora dolorem veritatis porro corrupti suscipit,
-                culpa
-                voluptates nihil?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit placeat aut saepe eveniet, rem rerum
-                officia ab
-                porro
-                iste, laboriosam sunt! Ex, nobis dicta? Quod earum ad quibusdam magni asperiores!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis odit, libero dignissimos rerum voluptas ex
-                repellendus
-                facilis est, recusandae minus reiciendis magni nam sint numquam labore. Nostrum sed id nemo?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat veritatis dicta similique minima vel qui
-                nostrum
-                saepe quo debitis. Dignissimos dolore voluptatibus quo in ea error praesentium voluptates eaque commodi?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad doloremque perferendis in voluptas
-                praesentium
-                libero
-                voluptatem voluptates voluptatum eius minima vel pariatur, beatae, a deleniti accusamus placeat autem
-                exercitationem
-                minus!
-            </p>
+            <form [formGroup]="testForm" class="form-group w-75 mx-auto mt-4">
+                <h2 class="text-center">Test Api</h2>
+
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" class="form-control" formControlName="userName">
+                <small *ngIf="testForm.controls['userName'].dirty && testForm.hasError('required','userName')"
+                    class="text-danger d-block">
+                    name is required
+                </small>
+                <label for="email">email:</label>
+                <input type="text" name="email" id="email" class="form-control" formControlName="userEmail">
+                <small *ngIf="testForm.controls['userEmail'].dirty && testForm.hasError('required','userEmail')"
+                    class="text-danger d-block">
+                    name is required
+                </small>
+                <button (click)="sumbiteForm()" class="btn btn-primary mt-2 mx-auto d-block w-25">Test</button>
+            </form>
+            <br><br><br>
+            <br><br><br>
+            <br>
+            <app-spinner></app-spinner>
+
         </div>
     </div>
-</div>
 
+</div>
 <app-footer></app-footer>

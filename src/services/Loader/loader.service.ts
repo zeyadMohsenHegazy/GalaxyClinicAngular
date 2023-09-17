@@ -1,27 +1,34 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoaderService {
-  private apiCount = 0;
-  private isLoadingSubject = new BehaviorSubject<boolean>(false);
-  isLoading$ = this.isLoadingSubject.asObservable();
+  private count = 0;
+  private spinner$ = new BehaviorSubject<string>('');
 
-  constructor() {}
-  
-  showLoader() {
-    if (this.apiCount === 0) {
-      this.isLoadingSubject.next(true);
-    }
-    this.apiCount++;
+  constructor() { }
+
+  getSpinnerObserver(): Observable<string> {
+    return this.spinner$.asObservable();
   }
 
-  hideLoader() {
-    this.apiCount--;
-    if (this.apiCount === 0) {
-      this.isLoadingSubject.next(false);
+  requestStarted() {
+    if (++this.count === 1) {
+      this.spinner$.next('start');
     }
+  }
+
+  requestEnded() {
+    if (this.count === 0 || --this.count === 0) {
+      this.spinner$.next('stop');
+    }
+  }
+
+  resetSpinner() {
+    this.count = 0;
+    this.spinner$.next('stop');
   }
 }

@@ -8,8 +8,13 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, SidebarComponent, SpinnerComponent],
+  declarations: [
+    HeaderComponent,
+    FooterComponent,
+    SidebarComponent,
+    SpinnerComponent,
+  ],
   imports: [CommonModule, TranslateModule],
-  exports: [HeaderComponent, FooterComponent, SidebarComponent],
+  exports: [HeaderComponent, FooterComponent, SidebarComponent, SpinnerComponent],
 })
 export class SharedModuleModule {}
