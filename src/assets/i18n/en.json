@@ -1,3 +1,10 @@
 {
-    "home": "Home"
+    "Lang":"English",
+    "Home": "Home",
+    "Reservations" : "Reservations",
+    "Doctors":"Doctors",
+    "ContactUs":"Contact Us",
+    "Name":"Name",
+    "Email":"Email",
+    "Test" : "Test"
 }

@@ -10,17 +10,31 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item m-1">
-                        <a class="nav-link text-light Headers" routerLink="/">{{'home' | translate}}</a>
+                        <a class="nav-link text-light Headers" routerLink="/">{{'Home' | translate}}</a>
                     </li>
                     <li class="nav-item m-1">
                         <a class="nav-link text-light Headers" routerLink="/"
-                            routerLinkActive="router-link-active">Reservations</a>
+                            routerLinkActive="router-link-active">{{'Reservations' | translate}}</a>
                     </li>
                     <li class="nav-item m-1">
-                        <a class="nav-link text-light Headers" routerLink="/">Doctors</a>
+                        <a class="nav-link text-light Headers" routerLink="/">{{'Doctors' | translate}}</a>
                     </li>
                     <li class="nav-item m-1">
-                        <a class="nav-link text-light Headers" routerLink="/">Contact Us</a>
+                        <a class="nav-link text-light Headers" routerLink="/">{{'ContactUs' | translate}}</a>
+                    </li>
+                    <li class="nav-item dropdown m-1">
+                        <a class="nav-link dropdown-toggle LanguageBtnAncor  text-light" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            {{'Lang' | translate}}
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="p-1">
+                                <a (click)="transelateEnglish()" class="langBtn">English</a>
+                            </li>
+                            <li class="p-1">
+                                <a (click)="transelateArabic()" class="langBtn">العربية</a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto">

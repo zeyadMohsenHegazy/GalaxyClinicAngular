@@ -18,9 +18,7 @@ export class DemoPageComponent {
     private translate: TranslateService,
     private fb: FormBuilder,
     private testApi: DemoServiceService
-  ) {
-    translate.use('en');
-  }
+  ) {}
 
   testForm = this.fb.group({
     userName: ['asd', Validators.required],

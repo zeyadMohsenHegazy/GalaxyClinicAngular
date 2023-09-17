@@ -9,6 +9,6 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent {
   title = 'GalaxyClinic';
   constructor(private translate: TranslateService) {
-    this.translate.setDefaultLang('ar');
+    this.translate.setDefaultLang('en');
   }
 }

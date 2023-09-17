@@ -65,3 +65,10 @@ nav {
 .FullName {
   font-weight: bold;
 }
+
+.langBtn {
+  cursor: pointer;
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
+}
