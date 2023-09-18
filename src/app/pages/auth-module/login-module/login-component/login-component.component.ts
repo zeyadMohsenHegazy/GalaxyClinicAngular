@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../../services/loginServices/login.service';
 import { LoginRequest } from '../../models/loginModels/loginRequest/login-request';
 import { TranslateService } from '@ngx-translate/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-component',
@@ -10,7 +11,11 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./login-component.component.css'],
 })
 export class LoginComponentComponent {
-  constructor(private fb: FormBuilder, private loginService: LoginService) {}
+  constructor(
+    private fb: FormBuilder,
+    private loginService: LoginService,
+    private router: Router
+  ) {}
   loginForm = this.fb.group({
     userName: ['', [Validators.required]],
     password: ['', [Validators.required]],

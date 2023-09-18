@@ -4,8 +4,10 @@ import { LoginComponentComponent } from './login-module/login-component/login-co
 import { RegisterComponent } from './register-module/register-component/register.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 
-const routes: Routes = [{ path: '', component: LoginComponentComponent },
-{path: 'register', component: RegisterComponent}];
+const routes: Routes = [
+  { path: 'login', component: LoginComponentComponent },
+  { path: 'register', component: RegisterComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
