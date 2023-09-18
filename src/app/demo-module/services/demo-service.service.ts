@@ -13,7 +13,7 @@ export class DemoServiceService {
     return this.invoker.sendApiResquest('test/testApi', Obj);
   }
 
-  LoginUrl = 'http://localhost:40102/test/testApi';
+  private LoginUrl = 'http://localhost:40102/test/testApi';
   sumbit(Obj: any) {
     return this.http.post<any>(`${this.LoginUrl}`, Obj);
   }

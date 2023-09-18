@@ -1,0 +1,8 @@
+.registerLink {
+  cursor: pointer;
+}
+.mainRow {
+  align-items: center !important;
+  margin-top: 5% !important;
+  margin-bottom: auto !important;
+}

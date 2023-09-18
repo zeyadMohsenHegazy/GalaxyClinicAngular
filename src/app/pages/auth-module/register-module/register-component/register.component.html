@@ -1,0 +1,126 @@
+<div class="container">
+  <div class="row mb-2">
+    <div class="col-md-4 mx-auto">
+      <div class="card rounded-2 mb-0">
+        <div class="card-header mt-0">
+          <div class="card-body">
+            <form class="form">
+              <div class="form-group">
+                <label for="FirstName">First Name</label>
+                <input
+                  id="FirstName"
+                  name="FirstName"
+                  type="text"
+                  class="form-control rounded-2"
+                  placeholder="zeyad"
+                  formControlName="name"
+                  [class.error]="
+                    registerForm.controls['name'].dirty &&
+                    registerForm.hasError('required', 'name')
+                  "
+                  (blur)="registerForm.controls['name'].markAsTouched()"
+                />
+                <small
+                  class="text-danger"
+                  *ngIf="
+                    registerForm.controls['name'].dirty &&
+                    registerForm.hasError('required', 'name')
+                  "
+                >
+                  *First Name is Required!
+                </small>
+              </div>
+              <div class="form-group">
+                <label for="LastName">Last Name</label>
+                <input
+                  id="LastName"
+                  name="LastName"
+                  type="text"
+                  class="form-control rounded-2"
+                  placeholder="mohsen"
+                  formControlName="userName"
+                  [class.error]="
+                    registerForm.controls['userName'].dirty &&
+                    registerForm.hasError('required', 'userName')
+                  "
+                  (blur)="registerForm.controls['userName'].markAsTouched()"
+                />
+                <small
+                  class="text-danger"
+                  *ngIf="
+                    registerForm.controls['userName'].dirty &&
+                    registerForm.hasError('required', 'userName')
+                  "
+                >
+                  *Last Name is Required!
+                </small>
+              </div>
+              <div class="form-group">
+                <label for="Email">Email</label>
+                <input
+                  id="Email"
+                  name="Email"
+                  type="Email"
+                  class="form-control rounded-2"
+                  placeholder="zeyadmohsen1999@gmail.com"
+                  formControlName="email"
+                  [class.error]="
+                    registerForm.controls['email'].dirty &&
+                    registerForm.hasError('required', 'email')
+                  "
+                  (blur)="registerForm.controls['email'].markAsTouched()"
+                />
+              </div>
+              <small
+                *ngIf="
+                  registerForm.controls['email'].dirty &&
+                  registerForm.hasError('required', 'email')
+                "
+                class="text-danger"
+                >*Email is Required!</small
+              >
+              <div class="form-group">
+                <label for="Password">Password</label>
+                <input
+                  id="Password"
+                  type="Password"
+                  name="Password"
+                  class="form-control rounded-2"
+                  placeholder="Password"
+                  formControlName="password"
+                  [class.error]="
+                    registerForm.controls['password'].dirty &&
+                    registerForm.hasError('required', 'password')
+                  "
+                  (blur)="registerForm.controls['password'].markAsTouched()"
+                />
+              </div>
+              <small
+                class="text-danger"
+                *ngIf="
+                  registerForm.controls['password'].dirty &&
+                  registerForm.hasError('required', 'password')
+                "
+              >
+                *Password is Required!
+              </small>
+              <button
+                type="submit"
+                class="btn btn-dark w-100 mt-3"
+                (click)="Register()"
+              >
+                Sign UP
+              </button>
+            </form>
+            <ul class="list-unstyled">
+              <li>
+                Already have Account
+                <a routerLink="/login" class="link-dark"> Login </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -7,11 +7,11 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-  constructor(private transelate: TranslateService) {}
+  constructor(private translate: TranslateService) {}
   transelateArabic() {
-    this.transelate.use('ar');
+    this.translate.use('ar');
   }
   transelateEnglish() {
-    this.transelate.use('en');
+    this.translate.use('en');
   }
 }
