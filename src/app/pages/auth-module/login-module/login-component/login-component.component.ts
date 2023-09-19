@@ -5,6 +5,7 @@ import { LoginRequest } from '../../models/loginModels/loginRequest/login-reques
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import { UserInfoService } from 'src/app/shared-module/services/currentUserInfo/user-info.service';
+import { ToasterInvokerService } from 'src/services/Toaster-Invoker/toaster-invoker.service';
 
 @Component({
   selector: 'app-login-component',
@@ -16,7 +17,8 @@ export class LoginComponentComponent {
     private fb: FormBuilder,
     private loginService: LoginService,
     private router: Router,
-    private userInfo: UserInfoService
+    private userInfo: UserInfoService,
+    private toast: ToasterInvokerService
   ) {}
   loginForm = this.fb.group({
     userName: ['', [Validators.required]],
@@ -34,7 +36,7 @@ export class LoginComponentComponent {
             this.loginService.isLogged = true;
             this.userInfo.setUserIdLocalStorage(value.result.userId);
             this.userInfo.setUserTypeLocalStorage(value.result.userType);
-            alert('Logged Successfully');
+            this.toast.successState('logged Successfully');
             //navigate to the home
           }
         },

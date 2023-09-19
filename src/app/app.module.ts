@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { SharedModuleModule } from './shared-module/shared-module.module';
 import { PagesModule } from './pages/pages.module';
 import { DemoModuleModule } from './demo-module/demo-module.module';
+import { ToastrModule } from 'ngx-toastr';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -32,6 +33,7 @@ export function createtranslateLoader(http: HttpClient) {
     BrowserAnimationsModule,
     RouterModule,
     PagesModule,
+    ToastrModule.forRoot(),
     SharedModuleModule,
     DemoModuleModule,
     HttpClientModule,

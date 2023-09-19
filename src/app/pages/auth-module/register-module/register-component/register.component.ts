@@ -6,6 +6,7 @@ import { DoctorSpecialitisComponent } from 'src/app/shared-module/components/doc
 import { DoctorSpecialitiesService } from 'src/app/shared-module/services/getDoctorSpecialities/doctor-specialities.service';
 import { RegisterPatientService } from '../../services/registerServices/registerAsPatient/register-patient.service';
 import { RegisterSystemUserService } from '../../services/registerServices/registerAsSystemUser/register-system-user.service';
+import { ToasterInvokerService } from 'src/services/Toaster-Invoker/toaster-invoker.service';
 
 @Component({
   selector: 'app-register',
@@ -24,7 +25,8 @@ export class RegisterComponent {
     private registerPatient: RegisterPatientService,
     private registerSysUser: RegisterSystemUserService,
     private router: Router,
-    private specialities: DoctorSpecialitiesService
+    private specialities: DoctorSpecialitiesService,
+    private toast: ToasterInvokerService
   ) {}
   registerForm = this.fb.group({
     fullName: ['', [Validators.required, Validators.minLength(4)]],
@@ -61,10 +63,10 @@ export class RegisterComponent {
       this.registerDoc.registerNewDoctor(this.registerForm.value).subscribe({
         next: (value) => {
           this.router.navigate(['pages/auth/login']);
-          alert(value.success);
+          this.toast.successState('Account Created Successfully');
         },
-        error(err) {
-          console.log(err?.error);
+        error:(err) =>{
+          this.toast.errorState(err?.error);
         },
       });
     } else if (this.selectedUserType == 'patient') {
@@ -74,10 +76,10 @@ export class RegisterComponent {
         .subscribe({
           next: (value) => {
             this.router.navigate(['pages/auth/login']);
-            alert(value.success);
+            this.toast.successState('Account Created Successfully');
           },
-          error(err) {
-            console.log(err?.error);
+          error:(err) =>{
+            this.toast.errorState(err?.error);
           },
         });
     } else if (this.selectedUserType == 'systemUser') {
@@ -87,10 +89,10 @@ export class RegisterComponent {
         .subscribe({
           next: (value) => {
             this.router.navigate(['pages/auth/login']);
-            alert(value.success);
+            this.toast.successState('Account Created Successfully');
           },
-          error(err) {
-            console.log(err?.error);
+          error:(err) =>{
+            this.toast.errorState(err?.error);
           },
         });
     }
