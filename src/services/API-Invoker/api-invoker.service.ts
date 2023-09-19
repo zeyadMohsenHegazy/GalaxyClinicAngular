@@ -13,8 +13,11 @@ export class ApiInvokerService {
   //base Request
   //base Response
   //to send request to the api
-  public sendApiResquest(methodName: string, RequestObj: any){
+  public sendApiResquest(methodName: string, RequestObj: any) {
     return this.http.post<any>(`${this.apiBaseUrl}${methodName}`, RequestObj);
     //return BaseResponse
+  }
+  public getApiResponse(methodName: string) {
+    return this.http.get<any>(`${this.apiBaseUrl}${methodName}`);
   }
 }

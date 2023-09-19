@@ -1,121 +1,124 @@
-<div class="container">
-  <div class="row mb-2">
-    <div class="col-md-4 mx-auto">
-      <div class="card rounded-2 mb-0">
-        <div class="card-header mt-0">
-          <div class="card-body">
-            <form class="form">
+<div class="container-fluid p-5">
+  <div class="row m-0 justify-content-center align-items-center border border-1 p-2 rounded-3">
+    <div class="col-md-6 col-sm-12 align-self-center">
+      <div class="">
+        <img src="../../../../../assets/4855148.jpg" alt="" class="img w-100 rounded-3">
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-12">
+      <div class=" rounded-2">
+        <div class="">
+          <div>
+            <form class="form justify-content-center" [formGroup]="registerForm">
+              <!-- {{registerForm.value | json}} -->
+              <!-- Name-->
               <div class="form-group">
-                <label for="FirstName">First Name</label>
-                <input
-                  id="FirstName"
-                  name="FirstName"
-                  type="text"
-                  class="form-control rounded-2"
-                  placeholder="zeyad"
-                  formControlName="name"
-                  [class.error]="
-                    registerForm.controls['name'].dirty &&
-                    registerForm.hasError('required', 'name')
-                  "
-                  (blur)="registerForm.controls['name'].markAsTouched()"
-                />
-                <small
-                  class="text-danger"
-                  *ngIf="
-                    registerForm.controls['name'].dirty &&
-                    registerForm.hasError('required', 'name')
-                  "
-                >
-                  *First Name is Required!
-                </small>
+                <label for="fullName" class="mt-3">Name: {{'Name' | translate}}</label>
+                <input id="fullName" name="fullName" type="text" class="form-control rounded-2" placeholder="ahmed"
+                  formControlName="fullName"
+                  [class.is-invalid]="registerForm.controls['fullName'].dirty && registerForm.hasError('required','fullName')" />
               </div>
+              <small *ngIf="registerForm.controls['fullName'].dirty && registerForm.hasError('required','fullName')"
+                class="text-danger">*Name is Required!</small>
+              <!--///-->
+
+              <!--Email-->
               <div class="form-group">
-                <label for="LastName">Last Name</label>
-                <input
-                  id="LastName"
-                  name="LastName"
-                  type="text"
-                  class="form-control rounded-2"
-                  placeholder="mohsen"
-                  formControlName="userName"
-                  [class.error]="
-                    registerForm.controls['userName'].dirty &&
-                    registerForm.hasError('required', 'userName')
-                  "
-                  (blur)="registerForm.controls['userName'].markAsTouched()"
-                />
-                <small
-                  class="text-danger"
-                  *ngIf="
-                    registerForm.controls['userName'].dirty &&
-                    registerForm.hasError('required', 'userName')
-                  "
-                >
-                  *Last Name is Required!
-                </small>
-              </div>
-              <div class="form-group">
-                <label for="Email">Email</label>
-                <input
-                  id="Email"
-                  name="Email"
-                  type="Email"
-                  class="form-control rounded-2"
-                  placeholder="zeyadmohsen1999@gmail.com"
+                <label for="email" class="mt-3">Email:</label>
+                <input id="email" name="email" type="text" class="form-control rounded-2" placeholder="ahmed@galaxy.com"
                   formControlName="email"
-                  [class.error]="
-                    registerForm.controls['email'].dirty &&
-                    registerForm.hasError('required', 'email')
-                  "
-                  (blur)="registerForm.controls['email'].markAsTouched()"
-                />
+                  [class.is-invalid]="registerForm.controls['email'].dirty && registerForm.hasError('required','email')" />
               </div>
-              <small
-                *ngIf="
-                  registerForm.controls['email'].dirty &&
-                  registerForm.hasError('required', 'email')
-                "
-                class="text-danger"
-                >*Email is Required!</small
-              >
+              <small *ngIf="registerForm.controls['email'].dirty && registerForm.hasError('required','email')"
+                class="text-danger">*Email is Required!</small>
+              <small *ngIf="registerForm.controls['email'].dirty && registerForm.hasError('pattern','email')"
+                class="text-danger">*please enter valid mail</small>
+              <!--///-->
+
+              <!--user Name-->
               <div class="form-group">
-                <label for="Password">Password</label>
-                <input
-                  id="Password"
-                  type="Password"
-                  name="Password"
-                  class="form-control rounded-2"
-                  placeholder="Password"
-                  formControlName="password"
-                  [class.error]="
-                    registerForm.controls['password'].dirty &&
-                    registerForm.hasError('required', 'password')
-                  "
-                  (blur)="registerForm.controls['password'].markAsTouched()"
-                />
+                <label for="userName" class="mt-3">User Name:</label>
+                <input id="userName" name="userName" type="text" class="form-control rounded-2"
+                  formControlName="userName" placeholder="ahmed24"
+                  [class.is-invalid]="registerForm.controls['userName'].dirty && registerForm.hasError('required','userName')" />
+              </div>
+              <small *ngIf="registerForm.controls['userName'].dirty && registerForm.hasError('required','userName')"
+                class="text-danger">*User Name is Required!</small>
+              <!--///-->
+
+              <!--Mobile Number-->
+              <div class="form-group">
+                <label for="mobileNumber" class="mt-3">Mobile Number:</label>
+                <input id="mobileNumber" name="mobileNumber" type="text" class="form-control rounded-2"
+                  formControlName="mobileNumber" placeholder="please type a valid phone number"
+                  [class.is-invalid]="registerForm.controls['mobileNumber'].dirty && registerForm.hasError('required','mobileNumber')" />
               </div>
               <small
-                class="text-danger"
-                *ngIf="
-                  registerForm.controls['password'].dirty &&
-                  registerForm.hasError('required', 'password')
-                "
-              >
-                *Password is Required!
-              </small>
-              <button
-                type="submit"
-                class="btn btn-dark w-100 mt-3"
-                (click)="Register()"
-              >
-                Sign UP
+                *ngIf="registerForm.controls['mobileNumber'].dirty && registerForm.hasError('required','mobileNumber')"
+                class="text-danger">*Mobile Number is Required!</small>
+              <small
+                *ngIf="registerForm.controls['mobileNumber'].dirty && registerForm.hasError('maxlength','mobileNumber')"
+                class="text-danger">*Mobile Number Should be 11 number maximum</small>
+              <small
+                *ngIf="registerForm.controls['mobileNumber'].dirty && registerForm.hasError('minlength','mobileNumber')"
+                class="text-danger">*Mobile Number Shouldn't be less than 11 number</small>
+              <!--///-->
+
+              <!--Password-->
+              <div class="form-group">
+                <label for="userPassword">Password :</label>
+                <input id="userPassword" type="Password" name="userPassword" class="form-control rounded-2"
+                  formControlName="userPassword"
+                  [class.is-invalid]="registerForm.controls['userPassword'].dirty && registerForm.hasError('required','userPassword')" />
+              </div>
+              <small
+                *ngIf="registerForm.controls['userPassword'].dirty && registerForm.hasError('required','userPassword')"
+                class="text-danger">*Password is Required!</small>
+              <small
+                *ngIf="registerForm.controls['userPassword'].dirty&& registerForm.hasError('pattern','userPassword')"
+                class="text-danger">*Password should be first character is uppercase and at least 11 chars</small>
+              <!--///-->
+              <br>
+              <!--Register As-->
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="userTypeName" id="userTypePatient" value="patient"
+                  (change)="getContent($event.target)" formControlName="userTypeName">
+                <label class="form-check-label h6" for="userTypePatient">Register As Patient</label>
+              </div>
+
+              <div class="form-check form-check-inline mt-2" id="selectUser">
+                <input class="form-check-input" type="radio" name="userTypeName" id="userTypeDoc" value="doctor"
+                  (change)="getContent($event.target)" formControlName="userTypeName">
+                <label class="form-check-label h6" for="userTypeDoc">Register As Doctor</label>
+              </div>
+
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="userTypeName" id="userTypeSys" value="systemUser"
+                  (change)="getContent($event.target)" formControlName="userTypeName">
+                <label class="form-check-label h6" for="userTypeSys">Register As System User</label>
+              </div>
+              <!--///-->
+
+              <!--Doctor Specialities-->
+              <div class="">
+                <label for="selectSpeciality" *ngIf="selectedUserType === 'doctor'">
+                  Select Your Speciality
+                </label>
+                <app-doctor-specialitis id="selectSpeciality"
+                  *ngIf="selectedUserType === 'doctor'"></app-doctor-specialitis>
+              </div>
+              <!--///-->
+              <button (click)="register()" type="submit" class="btn btn-dark w-100 mt-2"
+                [disabled]="!registerForm.valid">
+                Register
               </button>
             </form>
-            <ul class="list-unstyled">
+            <ul class="list-unstyled mt-3 text-center ">
               <li>
-                Already have Account
-                <a routerLink="/login" class="link-dark"> Login </a>
+                Already Registered!
+                <a routerLink='/pages/auth/login' class="link-dark">
+                  Login Now
+                </a>
               </li>
             </ul>
           </div>
@@ -123,4 +126,5 @@
       </div>
     </div>
   </div>
+  <app-spinner></app-spinner>
 </div>

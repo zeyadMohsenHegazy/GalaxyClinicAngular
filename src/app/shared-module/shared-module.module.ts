@@ -6,6 +6,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { DoctorSpecialitisComponent } from './components/doctor-specialitis/doctor-specialitis.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,8 +15,15 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     FooterComponent,
     SidebarComponent,
     SpinnerComponent,
+    DoctorSpecialitisComponent,
   ],
-  imports: [CommonModule, TranslateModule],
-  exports: [HeaderComponent, FooterComponent, SidebarComponent, SpinnerComponent],
+  imports: [CommonModule, TranslateModule, FormsModule],
+  exports: [
+    HeaderComponent,
+    FooterComponent,
+    SidebarComponent,
+    SpinnerComponent,
+    DoctorSpecialitisComponent,
+  ],
 })
 export class SharedModuleModule {}

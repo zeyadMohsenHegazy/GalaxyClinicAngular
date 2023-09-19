@@ -6,6 +6,8 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { createtranslateLoader } from 'src/app/app.module';
 import { HttpClient } from '@angular/common/http';
 import { LoginModuleModule } from './login-module/login-module.module';
+import { RegisterModuleModule } from './register-module/register-module.module';
+import { DoctorSpecialitisComponent } from 'src/app/shared-module/components/doctor-specialitis/doctor-specialitis.component';
 
 @NgModule({
   declarations: [],
@@ -14,7 +16,6 @@ import { LoginModuleModule } from './login-module/login-module.module';
     AuthRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    LoginModuleModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -24,5 +25,8 @@ import { LoginModuleModule } from './login-module/login-module.module';
       defaultLanguage: 'en',
     }),
   ],
+  providers:[
+    DoctorSpecialitisComponent
+  ]
 })
 export class AuthModuleModule {}

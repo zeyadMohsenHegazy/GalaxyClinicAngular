@@ -7,6 +7,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
 const routes: Routes = [
   { path: 'login', component: LoginComponentComponent },
   { path: 'register', component: RegisterComponent },
+  //handel 404 page not found **
 ];
 
 @NgModule({

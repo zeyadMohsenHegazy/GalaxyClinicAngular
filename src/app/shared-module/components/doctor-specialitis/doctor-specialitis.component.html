@@ -1,0 +1,9 @@
+<!--Doctor Spicialities-->
+<select class="form-select form-select-sm mb-2" id="selectSpeciality" name="specialties" title="Doctor Specialities"
+    [(ngModel)]="selectedSpeciality" (change)="getContent(selectedSpeciality)">
+    <option [value]="speciality.speciality_Code" *ngFor="let speciality of specialities">
+        {{ speciality.speciality_Name}}
+    </option>
+</select>
+<!--///-->
+<!--*ngIf="Content === 'doctor'"-->

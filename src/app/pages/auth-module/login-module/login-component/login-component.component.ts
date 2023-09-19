@@ -4,6 +4,7 @@ import { LoginService } from '../../services/loginServices/login.service';
 import { LoginRequest } from '../../models/loginModels/loginRequest/login-request';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
+import { UserInfoService } from 'src/app/shared-module/services/currentUserInfo/user-info.service';
 
 @Component({
   selector: 'app-login-component',
@@ -14,7 +15,8 @@ export class LoginComponentComponent {
   constructor(
     private fb: FormBuilder,
     private loginService: LoginService,
-    private router: Router
+    private router: Router,
+    private userInfo: UserInfoService
   ) {}
   loginForm = this.fb.group({
     userName: ['', [Validators.required]],
@@ -23,8 +25,6 @@ export class LoginComponentComponent {
   //login Api
   loginRequest: LoginRequest = { userName: '', password: '' };
   login() {
-    // this.loginRequest.userName = this.loginForm.get('userName')?.value ??'';
-    // this.loginRequest.password = this.loginForm.get('password')?.value ?? '';
     this.loginService
       .userLogin(this.loginForm.value as LoginRequest)
       .subscribe({
@@ -32,8 +32,9 @@ export class LoginComponentComponent {
           //checks that the api return success is true
           if (value.success == true) {
             this.loginService.isLogged = true;
-            alert(value.result.userType);
-            alert(value.result.userId);
+            this.userInfo.setUserIdLocalStorage(value.result.userId);
+            this.userInfo.setUserTypeLocalStorage(value.result.userType);
+            alert('Logged Successfully');
             //navigate to the home
           }
         },

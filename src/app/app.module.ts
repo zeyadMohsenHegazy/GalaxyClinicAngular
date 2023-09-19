@@ -18,6 +18,7 @@ import {
 } from '@angular/common/http';
 import { SpinnerComponent } from './shared-module/components/spinner/spinner.component';
 import { HttpInterceptInterceptor } from 'src/interceptors/http-intercept.interceptor';
+import { CommonModule } from '@angular/common';
 
 export function createtranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
@@ -25,6 +26,7 @@ export function createtranslateLoader(http: HttpClient) {
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

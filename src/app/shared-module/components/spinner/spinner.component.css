@@ -10,9 +10,8 @@
   position: fixed;
   z-index: 1000;
   top: 20%;
-  left: 50%;
-  background-color: rgba(112, 0, 0, 0.219);
-
+  left: 45%;
+  background-color: rgba(153, 142, 193, 0.106);
 }
 .loader::before,
 .loader::after {
