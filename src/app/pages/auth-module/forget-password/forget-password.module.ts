@@ -5,14 +5,16 @@ import { ResetPassComponent } from './reset-pass/reset-pass.component';
 import { SharedModuleModule } from 'src/app/shared-module/shared-module.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [ForgetPassComponent, ResetPassComponent],
   imports: [
     CommonModule,
-    SharedModuleModule,
     FormsModule,
     ReactiveFormsModule,
+    SharedModuleModule,
+    TranslateModule,
     RouterModule,
   ],
 })

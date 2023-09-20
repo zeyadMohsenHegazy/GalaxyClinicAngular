@@ -8,6 +8,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { DoctorSpecialitisComponent } from './components/doctor-specialitis/doctor-specialitis.component';
 import { FormsModule } from '@angular/forms';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { FormsModule } from '@angular/forms';
     SidebarComponent,
     SpinnerComponent,
     DoctorSpecialitisComponent,
+    ErrorPageComponent,
   ],
   imports: [CommonModule, TranslateModule, FormsModule],
   exports: [
@@ -24,6 +26,7 @@ import { FormsModule } from '@angular/forms';
     SidebarComponent,
     SpinnerComponent,
     DoctorSpecialitisComponent,
+    ErrorPageComponent,
   ],
 })
 export class SharedModuleModule {}

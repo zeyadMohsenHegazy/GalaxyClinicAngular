@@ -8,6 +8,8 @@ import { HttpClient } from '@angular/common/http';
 import { LoginModuleModule } from './login-module/login-module.module';
 import { RegisterModuleModule } from './register-module/register-module.module';
 import { DoctorSpecialitisComponent } from 'src/app/shared-module/components/doctor-specialitis/doctor-specialitis.component';
+import { ForgetPassComponent } from './forget-password/forget-pass/forget-pass.component';
+import { ForgetPasswordModule } from './forget-password/forget-password.module';
 
 @NgModule({
   declarations: [],
@@ -24,9 +26,10 @@ import { DoctorSpecialitisComponent } from 'src/app/shared-module/components/doc
       },
       defaultLanguage: 'en',
     }),
+    ForgetPasswordModule,
+    LoginModuleModule,
+    RegisterModuleModule,
   ],
-  providers:[
-    DoctorSpecialitisComponent
-  ]
+  providers: [DoctorSpecialitisComponent],
 })
 export class AuthModuleModule {}

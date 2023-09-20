@@ -20,6 +20,8 @@ import {
 import { SpinnerComponent } from './shared-module/components/spinner/spinner.component';
 import { HttpInterceptInterceptor } from 'src/interceptors/http-intercept.interceptor';
 import { CommonModule } from '@angular/common';
+import { AuthModuleModule } from './pages/auth-module/auth-module.module';
+import { ForgetPasswordModule } from './pages/auth-module/forget-password/forget-password.module';
 
 export function createtranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json');

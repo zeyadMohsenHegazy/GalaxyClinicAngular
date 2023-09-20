@@ -22,7 +22,7 @@ export class LoginComponentComponent {
   ) {}
   loginForm = this.fb.group({
     userName: ['', [Validators.required]],
-    password: ['', [Validators.required]],
+    password: ['', [Validators.required, Validators.minLength(11)]],
   });
   //login Api
   loginRequest: LoginRequest = { userName: '', password: '' };

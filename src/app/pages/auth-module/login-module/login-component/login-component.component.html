@@ -1,5 +1,6 @@
 <div class="container-fluid p-5">
     <div class="row mt-5 justify-content-center align-items-center border border-1 p-2 rounded-3 mainRow">
+        <h1 class="text-center">Login Form:</h1>
         <div class="col-md-6 col-sm-12  align-self-center">
             <div class="">
                 <img src="../../../../../assets/4855148.jpg" alt="" class="img w-100 rounded-3">
@@ -30,11 +31,12 @@
                                 class="text-danger">*Password is Required!</small>
                             <div class="form mt-2">
                                 <div class="form-inline fr">
-                                    <a id="forgot" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                        class="link-dark registerLink">Forgot password?</a>
+                                    <a routerLink="/pages/auth/forgetPassword" class="link-dark registerLink">Forgot
+                                        password?</a>
                                 </div>
                             </div>
-                            <button (click)="login()" type="submit" class="btn btn-dark w-100 mt-4">
+                            <button [disabled]="!loginForm.valid" (click)="login()" type="submit"
+                                class="btn btn-dark w-100 mt-4">
                                 Login
                             </button>
                         </form>
