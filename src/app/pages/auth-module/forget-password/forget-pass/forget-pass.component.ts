@@ -29,7 +29,7 @@ export class ForgetPassComponent {
       next: (value) => {
         if (value.success === true) {
           this.toast.infoState('Now time to reset the password');
-          this.userInfo.setUserIdLocalStorage(value.result.userId);
+          this.userInfo.setForgetPassCode(value.result.userId);
           this.router.navigate(['pages/auth/resetPassword']);
         } else {
           this.toast.warrningState(

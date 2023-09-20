@@ -61,11 +61,11 @@ export class RegisterComponent {
     if (this.selectedUserType == 'doctor') {
       //call register as doctor
       this.registerDoc.registerNewDoctor(this.registerForm.value).subscribe({
-        next: (value) => {
+        next: () => {
           this.router.navigate(['pages/auth/login']);
           this.toast.successState('Account Created Successfully');
         },
-        error:(err) =>{
+        error: (err) => {
           this.toast.errorState(err?.error);
         },
       });
@@ -74,11 +74,11 @@ export class RegisterComponent {
       this.registerPatient
         .registerNewPatient(this.registerForm.value)
         .subscribe({
-          next: (value) => {
+          next: () => {
             this.router.navigate(['pages/auth/login']);
             this.toast.successState('Account Created Successfully');
           },
-          error:(err) =>{
+          error: (err) => {
             this.toast.errorState(err?.error);
           },
         });
@@ -87,11 +87,11 @@ export class RegisterComponent {
       this.registerSysUser
         .registerNewSystemUser(this.registerForm.value)
         .subscribe({
-          next: (value) => {
+          next: () => {
             this.router.navigate(['pages/auth/login']);
             this.toast.successState('Account Created Successfully');
           },
-          error:(err) =>{
+          error: (err) => {
             this.toast.errorState(err?.error);
           },
         });

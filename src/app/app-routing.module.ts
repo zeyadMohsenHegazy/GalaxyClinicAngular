@@ -8,13 +8,18 @@ import { LoginComponentComponent } from './pages/auth-module/login-module/login-
 import { ErrorPageComponent } from './shared-module/components/error-page/error-page.component';
 //can deactivate on the
 const routes: Routes = [
-  { path: '', component: LoginComponentComponent },
+  {
+    path: '',
+    component: LoginComponentComponent,
+    canActivate: [authGuardGuard],
+  },
   {
     path: 'pages',
     loadChildren: () =>
       import('./pages/pages.module').then((z) => z.PagesModule),
     canActivate: [authGuardGuard],
   },
+  { path: 'demo', component: DemoPageComponent },
   { path: '**', component: ErrorPageComponent },
 ];
 

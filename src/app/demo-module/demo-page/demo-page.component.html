@@ -6,8 +6,7 @@
         </div>
         <div class="col-9 p-2">
             <form [formGroup]="testForm" class="form-group w-75 mx-auto mt-4">
-                <h2 class="text-center">Test Api</h2>
-
+                <h2 class="text-center">{{'TestApi' | translate}}</h2>
                 <label for="name">{{'Name' | translate}}:</label>
                 <input type="text" name="name" id="name" class="form-control" formControlName="userName">
                 <small *ngIf="testForm.controls['userName'].dirty && testForm.hasError('required','userName')"
@@ -27,9 +26,7 @@
             <br><br><br>
             <br>
             <app-spinner></app-spinner>
-
         </div>
     </div>
-
 </div>
 <app-footer></app-footer>

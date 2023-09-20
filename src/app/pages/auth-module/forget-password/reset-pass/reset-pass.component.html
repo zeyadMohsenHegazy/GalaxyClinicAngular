@@ -18,8 +18,12 @@
                                     [class.is-invalid]="resetForm.controls['userPassword'].dirty && resetForm.hasError('required','userPassword')" />
                             </div>
                             <small
-                                *ngIf="resetForm.controls['userPassword'].dirty && resetForm.hasError('required','password')"
+                                *ngIf="resetForm.controls['userPassword'].dirty && resetForm.hasError('required','userPassword')"
                                 class="text-danger">*Password is Required!</small>
+                            <small
+                                *ngIf="resetForm.controls['userPassword'].dirty&& resetForm.hasError('pattern','userPassword')"
+                                class="text-danger">*Password should be first character is uppercase and at least 11
+                                chars</small>
                             <div class="form-group">
                                 <label for="confirmPassword" class="mt-3 h6">Confirm Password :</label>
                                 <input id="confirmPassword" type="password" name="confirmPassword"
@@ -29,10 +33,12 @@
                             <small
                                 *ngIf="resetForm.controls['confirmPassword'].dirty && resetForm.hasError('required','confirmPassword')"
                                 class="text-danger">*Confirm Password is Required!</small>
-
+                            <small class="text-danger" *ngIf="resetForm.errors?.['misMatch']">
+                                Password doesn't match
+                            </small>
                             <button [disabled]="!resetForm.valid" (click)="resetPassword()" type="submit"
                                 class="btn btn-dark w-100 mt-4">
-                                Login
+                                Reset Password
                             </button>
                         </form>
 

@@ -6,6 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import { UserInfoService } from 'src/app/shared-module/services/currentUserInfo/user-info.service';
 import { ToasterInvokerService } from 'src/services/Toaster-Invoker/toaster-invoker.service';
+import { LoginResponse } from '../../models/loginModels/loginResponse/login-response';
 
 @Component({
   selector: 'app-login-component',
@@ -34,9 +35,11 @@ export class LoginComponentComponent {
           //checks that the api return success is true
           if (value.success == true) {
             this.loginService.isLogged = true;
-            this.userInfo.setUserIdLocalStorage(value.result.userId);
-            this.userInfo.setUserTypeLocalStorage(value.result.userType);
+            // this.userInfo.setUserIdLocalStorage(value.result.userId);
+            // this.userInfo.setUserTypeLocalStorage(value.result.userType);
+            this.userInfo.setUserInfo(value.result as LoginResponse);
             this.toast.successState('logged Successfully');
+            this.router.navigate(['demo']);
             //navigate to the home
           }
         },

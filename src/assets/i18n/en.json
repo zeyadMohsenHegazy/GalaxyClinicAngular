@@ -6,5 +6,21 @@
     "ContactUs":"Contact Us",
     "Name":"Name",
     "Email":"Email",
-    "Test" : "Test"
+    "Test" : "Test",
+    "Patient" : "Patient Caring System",
+    "FindOut" : "Find out one of the best clinics",
+    "reserve" : "reserve now online with us",
+    "through":"through your Account.",
+    "SignIn":"Sign In",
+    "Rights" : "© 2023 Galaxy, All rights reserved.",
+    "Makram" : "13 Makram, Nasr-City",
+    "Sun" : "Sun- Sat: 11 am - 12 am (GMT+2)",
+    "VAT" : "VAT registration number: 540 - 407 - 968",
+    "PhoneNumber":"+20(1011583454)",
+    "TestApi" : "Test Api",
+    "Hello" : "Hello",
+    "Dashboard" : "Dashboard",
+    "Orders": "Orders",
+    "Customers" : "المرضي",
+    "Galaxy" : "Galaxy"
 }

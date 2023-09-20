@@ -1,21 +1,23 @@
 import { Injectable } from '@angular/core';
+import { LoginResponse } from 'src/app/pages/auth-module/models/loginModels/loginResponse/login-response';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserInfoService {
   constructor() {}
+  public setForgetPassCode(forgetCode: string) {
+    localStorage.setItem('forgetCode', forgetCode);
+  }
+  public getForgetPassCode(): string {
+    return localStorage.getItem('forgetCode')!;
+  }
 
-  public setUserIdLocalStorage(userId: string) {
-    localStorage.setItem('userId', userId);
+  public setUserInfo(loginRespone: LoginResponse) {
+    localStorage.setItem('userInfo', JSON.stringify(loginRespone));
   }
-  public setUserTypeLocalStorage(userTypeName: string) {
-    localStorage.setItem('userType', userTypeName);
-  }
-  public getUserTypeLocalStorage(): string {
-    return localStorage.getItem('userType')!;
-  }
-  public getUserIdLocalStorage(): string {
-    return localStorage.getItem('userId')!;
+
+  public getUserInfo(): LoginResponse {
+    return JSON.parse(localStorage.getItem('userInfo')!) as LoginResponse;
   }
 }

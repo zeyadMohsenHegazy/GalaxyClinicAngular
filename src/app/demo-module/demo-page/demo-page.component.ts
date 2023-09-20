@@ -21,8 +21,8 @@ export class DemoPageComponent {
   ) {}
 
   testForm = this.fb.group({
-    userName: ['asd', Validators.required],
-    userEmail: ['asd', Validators.required],
+    userName: ['', Validators.required],
+    userEmail: ['', Validators.required],
   });
 
   sumbiteForm() {
