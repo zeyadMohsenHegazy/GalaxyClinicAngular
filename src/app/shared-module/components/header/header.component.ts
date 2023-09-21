@@ -9,7 +9,7 @@ import { LanguageService } from 'src/services/LanguageService/language.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-  userName!: string;
+  userName: string = '';
   isArabic: boolean = false;
   constructor(
     private translate: TranslateService,
@@ -28,6 +28,6 @@ export class HeaderComponent {
     this.isArabic = false;
   }
   private getUserName() {
-    this.userName = this.userInfo.getUserInfo().userName;
+    this.userName = this.userInfo.getUserInfo()?.userName;
   }
 }

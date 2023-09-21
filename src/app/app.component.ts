@@ -7,7 +7,7 @@ import { LanguageService } from 'src/services/LanguageService/language.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnChanges {
+export class AppComponent {
   title = 'GalaxyClinic';
   isArabic: boolean = false;
 
@@ -24,13 +24,5 @@ export class AppComponent implements OnChanges {
         console.log(this.isArabic);
       }
     });
-  }
-  ngOnChanges(changes: SimpleChanges): void {
-    this.isArabic = this.langService.isArabic;
-    console.log(this.isArabic);
-  }
-  ngOnInit(): void {
-    this.isArabic = this.langService.isArabic;
-    console.log(this.isArabic);
   }
 }

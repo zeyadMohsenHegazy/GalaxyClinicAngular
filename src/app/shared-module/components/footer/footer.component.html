@@ -1,13 +1,13 @@
-<footer class="py-1 bg-black text-light m-0 container-fluid">
+<footer class="py-1 bg-dark text-light m-0 container-fluid">
     <div class="row">
         <div class="col-6 col-md-4 p-3 col-sm-6 justify-content-center">
             <ul class="nav flex-column">
                 <h4>{{'ContactUs' | translate}}</h4>
 
                 <li class="nav-item "><a href="mailto:Galaxy@gmail.com"
-                        class="nav-link p-0 text-light text-decoration-underline Footer">Galaxy@gmail.com</a></li>
+                        class="nav-link p-0 text-light text-decoration-underline Footers">Galaxy@gmail.com</a></li>
                 <li class="nav-item mb-2"><a href="tel:+201555424873"
-                        class="nav-link p-0 text-light text-decoration-underline Footer">
+                        class="nav-link p-0 text-light text-decoration-underline Footers">
                         {{'PhoneNumber' | translate}}</a></li>
                 <li class="nav-item text-light p-0">{{'Makram' | translate}}</li>
                 <li class="nav-item mb-2 text-light">{{'Sun' | translate}}</li>
@@ -39,14 +39,14 @@
                 <li class="nav-item mb-2 text-light p-0">{{'reserve' | translate}}</li>
                 <li class="nav-item mb-2 text-light p-0">{{'through' | translate}}</li>
                 <li class="nav-item mb-2"><a routerLink=""
-                        class="nav-link p-0 text-light text-decoration-underline Footers">{{'SignIn' | translate}}</a>
+                        class="nav-link p-0 text-light text-decoration-underline Footers signOutLink" (click)="signOut()">{{'SignIn' | translate}}</a>
                 </li>
             </ul>
         </div>
     </div>
     <div class="row border-top mb-0">
-        <div class="col-12 pt-4 justify-content-center text-center">
-            <p>{{'Rights' | translate}}</p>
+        <div class="col-12 pt-3 justify-content-center text-center">
+            <p class="Footers fs-6">{{'Rights' | translate}}</p>
         </div>
     </div>
 </footer>

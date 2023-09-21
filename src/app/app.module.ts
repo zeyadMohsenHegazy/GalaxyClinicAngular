@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { SharedModuleModule } from './shared-module/shared-module.module';
 import { PagesModule } from './pages/pages.module';
-import { DemoModuleModule } from './demo-module/demo-module.module';
 import { ToastrModule } from 'ngx-toastr';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -17,11 +16,9 @@ import {
   HttpClient,
   HttpClientModule,
 } from '@angular/common/http';
-import { SpinnerComponent } from './shared-module/components/spinner/spinner.component';
 import { HttpInterceptInterceptor } from 'src/interceptors/http-intercept.interceptor';
 import { CommonModule } from '@angular/common';
-import { AuthModuleModule } from './pages/auth-module/auth-module.module';
-import { ForgetPasswordModule } from './pages/auth-module/forget-password/forget-password.module';
+import { DemoModuleModule } from './demo-module/demo-module.module';
 
 export function createtranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json');

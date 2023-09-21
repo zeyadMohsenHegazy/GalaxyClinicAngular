@@ -6,7 +6,8 @@
         </div>
         <div class="col-9 p-2">
             <form [formGroup]="testForm" class="form-group w-75 mx-auto mt-4">
-                <h2 class="text-center">{{'TestApi' | translate}}</h2>
+                <h2 class="text-center fs-4">{{'TestApi' | translate}}</h2>
+                <hr>
                 <label for="name">{{'Name' | translate}}:</label>
                 <input type="text" name="name" id="name" class="form-control" formControlName="userName">
                 <small *ngIf="testForm.controls['userName'].dirty && testForm.hasError('required','userName')"
@@ -19,7 +20,7 @@
                     class="text-danger d-block">
                     name is required
                 </small>
-                <button (click)="sumbiteForm()" class="btn btn-primary mt-2 mx-auto d-block w-25">{{'Test' |
+                <button (click)="sumbiteForm()" class="btn btn-warning fs-4 p-0 mt-2 mx-auto d-block w-25">{{'Test' |
                     translate}}</button>
             </form>
             <br><br><br>

@@ -19,7 +19,11 @@ const routes: Routes = [
       import('./pages/pages.module').then((z) => z.PagesModule),
     canActivate: [authGuardGuard],
   },
-  { path: 'demo', component: DemoPageComponent },
+  {
+    path: 'demo',
+    component: DemoPageComponent,
+    canActivate: [!authGuardGuard],
+  },
   { path: '**', component: ErrorPageComponent },
 ];
 

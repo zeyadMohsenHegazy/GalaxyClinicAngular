@@ -34,9 +34,6 @@ export class LoginComponentComponent {
         next: (value) => {
           //checks that the api return success is true
           if (value.success == true) {
-            this.loginService.isLogged = true;
-            // this.userInfo.setUserIdLocalStorage(value.result.userId);
-            // this.userInfo.setUserTypeLocalStorage(value.result.userType);
             this.userInfo.setUserInfo(value.result as LoginResponse);
             this.toast.successState('logged Successfully');
             this.router.navigate(['demo']);

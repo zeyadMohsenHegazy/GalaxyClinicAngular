@@ -1,11 +1,11 @@
 <div class="Header z-3" [class.ArabicDirection]="isArabic">
-    <nav class="navbar navbar-expand-lg navbar-light bg-black m-0">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark m-0">
         <div class="container-fluid">
-            <a class="navbar-brand h2 text-light logo" routerLink="/">Galaxy Clinic</a>
+            <a class="navbar-brand h2 text-light Headers" routerLink="/">Galaxy Clinic</a>
             <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                 aria-label="Toggle navigation">
-                <span><i class="fa-solid fa-bars"></i></span>
+                <span><img src="../../../../assets/bars-solid.png" alt="" width="20em"/></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
@@ -22,27 +22,24 @@
                     <li class="nav-item m-1">
                         <a class="nav-link text-light Headers" routerLink="/">{{'ContactUs' | translate}}</a>
                     </li>
-                    <li class="nav-item dropdown m-1">
-                        <a class="nav-link dropdown-toggle LanguageBtnAncor  text-light" href="#" role="button"
+                    <li class="nav-item dropdown m-1 ">
+                        <a class="nav-link dropdown-toggle LanguageBtnAncor text-light Headers" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             {{'Lang' | translate}}
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu ">
                             <li class="p-1">
-                                <a (click)="transelateEnglish()" class="langBtn">English</a>
+                                <a (click)="transelateEnglish()" class="langBtn Headers">English</a>
                             </li>
                             <li class="p-1">
-                                <a (click)="transelateArabic()" class="langBtn">العربية</a>
+                                <a (click)="transelateArabic()" class="langBtn Headers">العربية</a>
                             </li>
                         </ul>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
-                    <li class="nav-item p-1" *ngIf="">
-                        <a routerLink="/login"><i class="fa-solid fa-xl fa-user user"></i></a>
-                    </li>
-                    <li class="nav-item p-1 mt-1 text-light" *ngIf="userName">
-                        <span class="text-light p-4 h6">{{'Hello' | translate}}: {{userName}}</span>
+                    <li class="nav-item p-1 mt-1 text-light " *ngIf="userName">
+                        <span class="text-light p-4 h6 Headers">{{'Hello' | translate}}: {{userName}}</span>
                         <a><i class="fa-solid fa-xl fa-right-from-bracket"></i></a>
                     </li>
                 </ul>

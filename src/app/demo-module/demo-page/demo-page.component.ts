@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { DemoServiceService } from '../services/demo-service.service';
+import { ToasterInvokerService } from 'src/services/Toaster-Invoker/toaster-invoker.service';
 
 @Component({
   selector: 'app-demo-page',
@@ -17,7 +18,8 @@ export class DemoPageComponent {
   constructor(
     private translate: TranslateService,
     private fb: FormBuilder,
-    private testApi: DemoServiceService
+    private testApi: DemoServiceService,
+    private toast: ToasterInvokerService
   ) {}
 
   testForm = this.fb.group({
@@ -28,8 +30,8 @@ export class DemoPageComponent {
   sumbiteForm() {
     // this.testApi.func(this.testForm.value);
     this.testApi.func(this.testForm.value).subscribe({
-      next(value) {
-        alert(value.message);
+      next: (value) => {
+        this.toast.successState(value.message);
       },
       error(err) {
         console.log(err?.error);

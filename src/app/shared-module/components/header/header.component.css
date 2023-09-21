@@ -3,11 +3,8 @@
 }
 
 .Headers:hover {
-  color: #aba2fd !important;
+  color: #ebb30a !important;
   font-weight: bold;
-}
-nav i:hover {
-  color: #aba2fd !important;
 }
 .user {
   margin-left: 1em;

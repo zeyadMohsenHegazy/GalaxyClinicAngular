@@ -3,6 +3,9 @@
   bottom: 0;
 }
 .Footers:hover {
-  color: #aba2fd !important;
+  color: #ebb30a !important;
   font-weight: bold;
+}
+.signOutLink {
+  cursor: pointer;
 }
