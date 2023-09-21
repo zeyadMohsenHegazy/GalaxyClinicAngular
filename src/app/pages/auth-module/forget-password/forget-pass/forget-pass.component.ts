@@ -27,7 +27,7 @@ export class ForgetPassComponent {
   forgetPassword() {
     this.forgetApi.forgetPasswordApi(this.forgetForm.value).subscribe({
       next: (value) => {
-        if (value.success === true) {
+        if (value.success) {
           this.toast.infoState('Now time to reset the password');
           this.userInfo.setForgetPassCode(value.result.userId);
           this.router.navigate(['pages/auth/resetPassword']);

@@ -51,9 +51,13 @@ export class ResetPassComponent {
       this.toast.errorState("password doesn't match");
     } else {
       this.resetPass.resetPasswordApi(this.resetForm.value).subscribe({
-        next: () => {
-          this.toast.successState('Your password resetted successfully');
-          this.router.navigate(['pages/auth/login']);
+        next: (value) => {
+          if (value.success) {
+            this.toast.successState('Your password resetted successfully');
+            this.router.navigate(['pages/auth/login']);
+          } else {
+            this.toast.errorState('Please try again later');
+          }
         },
         error: () => {
           this.toast.errorState('An Error Occured please try again');

@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../../services/loginServices/login.service';
 import { LoginRequest } from '../../models/loginModels/loginRequest/login-request';
-import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import { UserInfoService } from 'src/app/shared-module/services/currentUserInfo/user-info.service';
 import { ToasterInvokerService } from 'src/services/Toaster-Invoker/toaster-invoker.service';
@@ -32,16 +31,16 @@ export class LoginComponentComponent {
       .userLogin(this.loginForm.value as LoginRequest)
       .subscribe({
         next: (value) => {
-          //checks that the api return success is true
           if (value.success == true) {
             this.userInfo.setUserInfo(value.result as LoginResponse);
             this.toast.successState('logged Successfully');
             this.router.navigate(['demo']);
-            //navigate to the home
+          } else {
+            this.toast.errorState(value.message);
           }
         },
-        error(err) {
-          console.log(err?.error);
+        error: () => {
+          this.toast.errorState('something went wrong please try again later');
         },
       });
   }
