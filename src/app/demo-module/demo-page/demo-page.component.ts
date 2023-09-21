@@ -28,13 +28,12 @@ export class DemoPageComponent {
   });
 
   sumbiteForm() {
-    // this.testApi.func(this.testForm.value);
     this.testApi.func(this.testForm.value).subscribe({
       next: (value) => {
         this.toast.successState(value.message);
       },
-      error(err) {
-        console.log(err?.error);
+      error: (err) => {
+        this.toast.errorState(err?.error);
       },
     });
     this.resetForm();

@@ -22,7 +22,6 @@ const routes: Routes = [
   {
     path: 'demo',
     component: DemoPageComponent,
-    canActivate: [!authGuardGuard],
   },
   { path: '**', component: ErrorPageComponent },
 ];

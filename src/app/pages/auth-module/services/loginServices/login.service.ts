@@ -8,11 +8,7 @@ import { UserInfoService } from 'src/app/shared-module/services/currentUserInfo/
 })
 export class LoginService {
   private methodeName = 'Users/login';
-  constructor(
-    private apiInvoker: ApiInvokerService,
-    private userInfo: UserInfoService
-  ) {
-  }
+  constructor(private apiInvoker: ApiInvokerService) {}
 
   userLogin(login: LoginRequest) {
     return this.apiInvoker.sendApiResquest(this.methodeName, login);
