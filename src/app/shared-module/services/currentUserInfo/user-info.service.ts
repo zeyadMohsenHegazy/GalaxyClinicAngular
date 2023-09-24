@@ -13,7 +13,9 @@ export class UserInfoService {
   public getForgetPassCode(): string {
     return localStorage.getItem('forgetCode')!;
   }
-
+  public clearForgetPassCode() {
+    localStorage.removeItem('forgetCode');
+  }
   public setUserInfo(loginRespone: LoginResponse) {
     localStorage.setItem('userInfo', JSON.stringify(loginRespone));
   }

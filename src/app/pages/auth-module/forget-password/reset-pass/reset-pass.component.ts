@@ -54,6 +54,9 @@ export class ResetPassComponent {
         next: (value) => {
           if (value.success) {
             this.toast.successState('Your password resetted successfully');
+            //deletes the forget password code
+            this.userInfo.clearForgetPassCode();
+            //---//
             this.router.navigate(['pages/auth/login']);
           } else {
             this.toast.errorState('Please try again later');
