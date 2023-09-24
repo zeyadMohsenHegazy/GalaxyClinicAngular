@@ -12,29 +12,7 @@
           <div>
             <form class="form justify-content-center" [formGroup]="registerForm">
               <!-- {{registerForm.value | json}} -->
-              <!-- Name-->
-              <div class="form-group">
-                <label for="fullName" class="mt-3">Name: {{'Name' | translate}}</label>
-                <input id="fullName" name="fullName" type="text" class="form-control rounded-2" placeholder="ahmed"
-                  formControlName="fullName"
-                  [class.is-invalid]="registerForm.controls['fullName'].dirty && registerForm.hasError('required','fullName')" />
-              </div>
-              <small *ngIf="registerForm.controls['fullName'].dirty && registerForm.hasError('required','fullName')"
-                class="text-danger">*Name is Required!</small>
-              <!--///-->
-
-              <!--Email-->
-              <div class="form-group">
-                <label for="email" class="mt-3">Email:</label>
-                <input id="email" name="email" type="text" class="form-control rounded-2" placeholder="ahmed@galaxy.com"
-                  formControlName="email"
-                  [class.is-invalid]="registerForm.controls['email'].dirty && registerForm.hasError('required','email')" />
-              </div>
-              <small *ngIf="registerForm.controls['email'].dirty && registerForm.hasError('required','email')"
-                class="text-danger">*Email is Required!</small>
-              <small *ngIf="registerForm.controls['email'].dirty && registerForm.hasError('pattern','email')"
-                class="text-danger">*please enter valid mail</small>
-              <!--///-->
+              <!-- {{'Name' | translate}} -->
 
               <!--user Name-->
               <div class="form-group">
@@ -47,23 +25,7 @@
                 class="text-danger">*User Name is Required!</small>
               <!--///-->
 
-              <!--Mobile Number-->
-              <div class="form-group">
-                <label for="mobileNumber" class="mt-3">Mobile Number:</label>
-                <input id="mobileNumber" name="mobileNumber" type="text" class="form-control rounded-2"
-                  formControlName="mobileNumber" placeholder="please type a valid phone number"
-                  [class.is-invalid]="registerForm.controls['mobileNumber'].dirty && registerForm.hasError('required','mobileNumber')" />
-              </div>
-              <small
-                *ngIf="registerForm.controls['mobileNumber'].dirty && registerForm.hasError('required','mobileNumber')"
-                class="text-danger">*Mobile Number is Required!</small>
-              <small
-                *ngIf="registerForm.controls['mobileNumber'].dirty && registerForm.hasError('maxlength','mobileNumber')"
-                class="text-danger">*Mobile Number Should be 11 number maximum</small>
-              <small
-                *ngIf="registerForm.controls['mobileNumber'].dirty && registerForm.hasError('minlength','mobileNumber')"
-                class="text-danger">*Mobile Number Shouldn't be less than 11 number</small>
-              <!--///-->
+
 
               <!--Password-->
               <div class="form-group">
@@ -100,13 +62,22 @@
               </div>
               <!--///-->
 
-              <!--Doctor Specialities-->
-              <div class="">
-                <label for="selectSpeciality" *ngIf="selectedUserType === 'doctor'">
-                  Select Your Speciality
-                </label>
-                <app-doctor-specialitis id="selectSpeciality"
-                  *ngIf="selectedUserType === 'doctor'"></app-doctor-specialitis>
+              <!--register As doctor-->
+              <div class="" *ngIf="selectedUserType === 'doctor'">
+                <h2 class="text-center text-primary">Register As Doctor</h2>
+                <app-register-doctor [registerDoctorForm]="registerDoctorForm"></app-register-doctor>
+              </div>
+              <!--///-->
+              <!--register as patient-->
+              <div *ngIf="selectedUserType === 'patient'">
+                <h2 class="text-center text-primary">Register As Patient</h2>
+                <app-register-patient [registerPatientForm]="registerPatientForm"></app-register-patient>
+              </div>
+              <!--register as system user-->
+              <div *ngIf="selectedUserType === 'systemUser'">
+                <h2 class="text-center text-primary">Register As System User</h2>
+                <app-register-system-user [registerSystemUserForm]="registerSystemUserForm">
+                </app-register-system-user>
               </div>
               <!--///-->
               <button (click)="register()" type="submit" class="btn btn-dark w-100 mt-2"

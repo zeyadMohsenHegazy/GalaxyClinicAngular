@@ -9,7 +9,7 @@ import { SpecialityResponse } from '../../models/speciality-response';
 })
 export class DoctorSpecialitisComponent {
   public doctorspiciality!: number;
-  selectedSpeciality :any;
+  selectedSpeciality: any;
   constructor(private specialitiesService: DoctorSpecialitiesService) {
     this.getDoctorSpecialities();
   }
@@ -28,7 +28,5 @@ export class DoctorSpecialitisComponent {
   public getContent(e: any) {
     this.doctorspiciality = e;
     this.specialitiesService.specialityCode = e;
-    console.log(this.specialities);
-    console.log(e)
   }
 }

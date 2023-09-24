@@ -1,0 +1,53 @@
+<form class="form" [formGroup]="registerPatientForm">
+    <div class="form-group">
+        <label for="patientName">Pateint Name:</label>
+        <input type="text" id="patientName" formControlName="pateintName" class="form-control rounded-2"
+            [class.is-invalid]="name?.invalid && (name?.dirty || name?.touched)">
+        <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="alert alert-danger p-1 m-1">
+            <div *ngIf="name?.errors?.['required']">
+                name is required.
+            </div>
+            <div *ngIf="name?.errors?.['minlength']">
+                name must be at least 4 characters long.
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="patientMobileNumber">Pateint Mobile Number:</label>
+        <input type="text" id="patientMobileNumber" formControlName="patientMobileNumber" class="form-control rounded-2"
+            [class.is-invalid]="mobilNumber?.invalid && (mobilNumber?.dirty || mobilNumber?.touched)">
+        <div *ngIf="mobilNumber?.invalid && (mobilNumber?.dirty || mobilNumber?.touched)"
+            class="alert alert-danger p-1 m-1">
+            <div *ngIf="mobilNumber?.errors?.['required']">
+                mobile Number is required.
+            </div>
+            <div *ngIf="mobilNumber?.errors?.['minlength']">
+                mobile number must be 11 digits.
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="patientEmail">Pateint Email:</label>
+        <input type="text" id="patientEmail" formControlName="patientEmail" class="form-control rounded-2"
+            [class.is-invalid]="mail?.invalid && (mail?.dirty || mail?.touched)">
+        <div *ngIf="mail?.invalid && (mail?.dirty || mail?.touched)" class="alert alert-danger p-1 m-1">
+            <div *ngIf="mail?.errors?.['required']">
+                email is required.
+            </div>
+            <div *ngIf="mail?.errors?.['pattern']">
+                email must be like this examble24@gamil.com
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="patientDateOfBirth">Pateint Date Of Birth:</label>
+        <input type="date" id="patientDateOfBirth" formControlName="patientDateOfBirth" class="form-control rounded-2">
+        <div *ngIf="dateOfBirth?.invalid && (dateOfBirth?.dirty || dateOfBirth?.touched)"
+            class="alert alert-danger p-1 m-1">
+            <div *ngIf="dateOfBirth?.errors?.['required']">
+                date of birth is required.
+            </div>
+
+        </div>
+    </div>
+</form>

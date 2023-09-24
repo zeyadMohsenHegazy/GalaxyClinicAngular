@@ -1,0 +1,43 @@
+<form class="form" [formGroup]="registerSystemUserForm">
+    <div class="form-group">
+        <label for="systemUserName">System User Name:</label>
+        <input type="text" id="systemUserName" class="form-control rounded-2" formControlName="systemUserName"
+            [class.is-invalid]="name?.invalid && (name?.dirty || name?.touched)">
+        <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="alert alert-danger p-1 m-1">
+            <div *ngIf="name?.errors?.['required']">
+                name is required.
+            </div>
+            <div *ngIf="name?.errors?.['minlength']">
+                Name must be at least 4 characters long.
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="systemUserMobileNumber">System User Mobile Number:</label>
+        <input type="text" id="systemUserMobileNumber" class="form-control rounded-2"
+            formControlName="systemUserMobileNumber"
+            [class.is-invalid]="mobilNumber?.invalid && (mobilNumber?.dirty || mobilNumber?.touched)">
+        <div *ngIf="mobilNumber?.invalid && (mobilNumber?.dirty || mobilNumber?.touched)"
+            class="alert alert-danger p-1 m-1">
+            <div *ngIf="mobilNumber?.errors?.['required']">
+                mobile Number is required.
+            </div>
+            <div *ngIf="mobilNumber?.errors?.['minlength']">
+                mobile number must be 11 digits.
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="systemUserEmail">System User Email:</label>
+        <input type="text" id="systemUserEmail" class="form-control rounded-2" formControlName="systemUserEmail"
+            [class.is-invalid]="mail?.invalid && (mail?.dirty || mail?.touched)">
+        <div *ngIf="mail?.invalid && (mail?.dirty || mail?.touched)" class="alert alert-danger p-1 m-1">
+            <div *ngIf="mail?.errors?.['required']">
+                email is required.
+            </div>
+            <div *ngIf="mail?.errors?.['pattern']">
+                email must be like this examble24@gamil.com
+            </div>
+        </div>
+    </div>
+</form>
