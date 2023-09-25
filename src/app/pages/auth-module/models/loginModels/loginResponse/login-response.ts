@@ -1,5 +1,6 @@
 export interface LoginResponse {
     "userId": number,
     "userType": string,
-    "userName": string
+    "userName": string,
+    "userToken" : string
 }

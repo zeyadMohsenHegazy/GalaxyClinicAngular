@@ -1,27 +1,35 @@
 {
-    "Lang":"English",
-    "Home": "Home",
-    "Reservations" : "Reservations",
-    "Doctors":"Doctors",
-    "ContactUs":"Contact Us",
-    "Name":"Name",
-    "Email":"Email",
-    "Test" : "Test",
-    "Patient" : "Patient Caring System",
-    "FindOut" : "Find out one of the best clinics",
-    "reserve" : "reserve now online with us",
-    "through":"through your Account.",
-    "SignIn":"Sign Out",
-    "Rights" : "© 2023 Galaxy, All rights reserved.",
-    "Makram" : "13 Makram, Nasr-City",
-    "Sun" : "Sun- Sat: 11 am - 12 am (GMT+2)",
-    "VAT" : "VAT registration number: 540 - 407 - 968",
-    "PhoneNumber":"+20(1011583454)",
-    "TestApi" : "Test Api",
-    "Hello" : "Hello",
-    "Dashboard" : "Dashboard",
-    "Orders": "Reservations",
-    "Customers" : "Patients",
-    "Galaxy" : "Galaxy",
-    "Error" : "Error 404 Page Not Found"
+    "header":{
+        "home": "Home",
+        "Reservations" : "Reservations",
+        "Doctors":"Doctors",
+        "ContactUs":"Contact Us",
+        "Lang":"English",
+        "Hello" : "Hello"
+    },
+    "footer":{
+        "Patient" : "Patient Caring System",
+        "FindOut" : "Find out one of the best clinics",
+        "reserve" : "reserve now online with us",
+        "through":"through your Account.",
+        "SignIn":"Sign Out",
+        "Rights" : "© 2023 Galaxy, All rights reserved.",
+        "Makram" : "13 Makram, Nasr-City",
+        "Sun" : "Sun- Sat: 11 am - 12 am (GMT+2)",
+        "VAT" : "VAT registration number: 540 - 407 - 968",
+        "PhoneNumber":"+20(1011583454)"
+    },
+    "sidebar":{
+        "Dashboard" : "Dashboard",
+        "Orders": "Reservations",
+        "Customers" : "Patients",
+        "Galaxy" : "Galaxy"
+    },
+    "demo":{
+        "Test" : "Test",
+        "TestApi" : "Test Api"
+    },
+    "errorPage":{
+        "Error" : "Error 404 Page Not Found"
+    }
 }

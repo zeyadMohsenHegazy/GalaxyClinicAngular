@@ -1,12 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { LoginRequest } from 'src/app/pages/auth-module/models/loginModels/loginRequest/login-request';
 import { LoginResponse } from 'src/app/pages/auth-module/models/loginModels/loginResponse/login-response';
+import { LoginService } from 'src/app/pages/auth-module/services/loginServices/login.service';
+import { ToasterInvokerService } from 'src/services/Toaster-Invoker/toaster-invoker.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserInfoService {
-  constructor(private route: Router) {}
+  private loginRequest: LoginRequest = { userName: '', password: '' };
+  constructor(
+    private route: Router,
+    private loginService: LoginService,
+    private toast: ToasterInvokerService
+  ) {}
   public setForgetPassCode(forgetCode: string) {
     localStorage.setItem('forgetCode', forgetCode);
   }
@@ -29,5 +38,18 @@ export class UserInfoService {
   }
   isLogged(): boolean {
     return !!localStorage.getItem('userInfo');
+  }
+  updateUserData() {
+    this.loginRequest.userName = this.getUserInfo().userName;
+    this.loginRequest.password = this.getUserInfo().userToken;
+    this.loginService.userLogin(this.loginRequest).subscribe({
+      next: (value) => {
+        this.setUserInfo(value.result);
+        this.toast.successState('user info updated successfully');
+      },
+      error: () => {
+        this.toast.errorState('something went wrong while updating the data');
+      },
+    });
   }
 }

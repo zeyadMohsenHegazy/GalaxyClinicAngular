@@ -5,27 +5,27 @@
             <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                 aria-label="Toggle navigation">
-                <span><img src="../../../../assets/bars-solid.png" alt="" width="20em"/></span>
+                <span><img src="../../../../assets/bars-solid.png" alt="" width="20em" /></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item m-1">
-                        <a class="nav-link text-light Headers" routerLink="/">{{'Home' | translate}}</a>
+                        <a class="nav-link text-light Headers" routerLink="/">{{'header.home' | translate}}</a>
                     </li>
                     <li class="nav-item m-1">
                         <a class="nav-link text-light Headers" routerLink="/"
-                            routerLinkActive="router-link-active">{{'Reservations' | translate}}</a>
+                            routerLinkActive="router-link-active">{{'header.Reservations' | translate}}</a>
                     </li>
                     <li class="nav-item m-1">
-                        <a class="nav-link text-light Headers" routerLink="/">{{'Doctors' | translate}}</a>
+                        <a class="nav-link text-light Headers" routerLink="/">{{'header.Doctors' | translate}}</a>
                     </li>
                     <li class="nav-item m-1">
-                        <a class="nav-link text-light Headers" routerLink="/">{{'ContactUs' | translate}}</a>
+                        <a class="nav-link text-light Headers" routerLink="/">{{'header.ContactUs' | translate}}</a>
                     </li>
                     <li class="nav-item dropdown m-1 ">
                         <a class="nav-link dropdown-toggle LanguageBtnAncor text-light Headers" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            {{'Lang' | translate}}
+                            {{'header.Lang' | translate}}
                         </a>
                         <ul class="dropdown-menu ">
                             <li class="p-1">
@@ -39,7 +39,7 @@
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item p-1 mt-1 text-light " *ngIf="userName">
-                        <span class="text-light p-4 h6 Headers">{{'Hello' | translate}}: {{userName}}</span>
+                        <span class="text-light p-4 h6 Headers">{{'header.Hello' | translate}}: {{userName}}</span>
                         <a><i class="fa-solid fa-xl fa-right-from-bracket"></i></a>
                     </li>
                 </ul>
