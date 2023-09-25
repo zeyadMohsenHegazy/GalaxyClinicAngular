@@ -19,6 +19,7 @@ import {
 import { HttpInterceptInterceptor } from 'src/interceptors/http-intercept.interceptor';
 import { CommonModule } from '@angular/common';
 import { DemoModuleModule } from './demo-module/demo-module.module';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 export function createtranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
@@ -32,6 +33,7 @@ export function createtranslateLoader(http: HttpClient) {
     BrowserAnimationsModule,
     RouterModule,
     PagesModule,
+    NgxPaginationModule,
     ToastrModule.forRoot(),
     SharedModuleModule,
     DemoModuleModule,
