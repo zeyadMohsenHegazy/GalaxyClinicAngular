@@ -8,6 +8,7 @@ import { TransactionModuleModule } from './transaction-module/transaction-module
 import { createtranslateLoader } from '../app.module';
 import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { HttpInterceptInterceptor } from 'src/interceptors/http-intercept.interceptor';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [],
@@ -17,6 +18,7 @@ import { HttpInterceptInterceptor } from 'src/interceptors/http-intercept.interc
     ConfigModuleModule,
     TransactionModuleModule,
     PagesRoutingModule,
+    FormsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

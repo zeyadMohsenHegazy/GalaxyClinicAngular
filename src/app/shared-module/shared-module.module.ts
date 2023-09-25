@@ -9,6 +9,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { DoctorSpecialitisComponent } from './components/doctor-specialitis/doctor-specialitis.component';
 import { FormsModule } from '@angular/forms';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
     DoctorSpecialitisComponent,
     ErrorPageComponent,
   ],
-  imports: [CommonModule, TranslateModule, FormsModule],
+  imports: [CommonModule, TranslateModule, FormsModule, RouterModule],
   exports: [
     HeaderComponent,
     FooterComponent,
