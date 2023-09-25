@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
 import { LoginRequest } from 'src/app/pages/auth-module/models/loginModels/loginRequest/login-request';
 import { LoginResponse } from 'src/app/pages/auth-module/models/loginModels/loginResponse/login-response';
 import { LoginService } from 'src/app/pages/auth-module/services/loginServices/login.service';
@@ -11,6 +10,7 @@ import { ToasterInvokerService } from 'src/services/Toaster-Invoker/toaster-invo
 })
 export class UserInfoService {
   private loginRequest: LoginRequest = { userName: '', password: '' };
+  public loginCounter: number = 0;
   constructor(
     private route: Router,
     private loginService: LoginService,
@@ -27,8 +27,11 @@ export class UserInfoService {
   }
   public setUserInfo(loginRespone: LoginResponse) {
     localStorage.setItem('userInfo', JSON.stringify(loginRespone));
+    this.loginCounter = 1;
   }
-
+  get loginCount() {
+    return this.loginCounter;
+  }
   public getUserInfo(): LoginResponse {
     return JSON.parse(localStorage.getItem('userInfo')!) as LoginResponse;
   }

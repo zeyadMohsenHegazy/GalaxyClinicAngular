@@ -11,7 +11,6 @@ export const authGuardGuard: CanActivateFn = (route, state) => {
     return true;
   } else {
     //update the user data
-    userInfo.updateUserData();
     router.navigate(['demo']);
     return false;
   }
