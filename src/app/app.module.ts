@@ -20,6 +20,8 @@ import { HttpInterceptInterceptor } from 'src/interceptors/http-intercept.interc
 import { CommonModule } from '@angular/common';
 import { DemoModuleModule } from './demo-module/demo-module.module';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { DoctorsModule } from './pages/config-module/doctors/doctors.module';
+import { SpecialitiesModule } from './pages/config-module/specialities/specialities.module';
 
 export function createtranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json');

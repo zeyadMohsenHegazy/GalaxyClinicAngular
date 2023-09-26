@@ -12,7 +12,7 @@ export class DoctorSpecialitisComponent {
   constructor(private specialitiesService: DoctorSpecialitiesService) {
     this.getDoctorSpecialities();
   }
-  specialities!: [SpecialityResponse];
+  specialities!: SpecialityResponse[];
   private getDoctorSpecialities() {
     this.specialitiesService.getSpecialities().subscribe({
       next: (value) => {

@@ -54,7 +54,7 @@
                         *ngIf="DoctorId>0" [disabled]="!editDoctorForm.valid">
                     <input type="button" value="Add" class="btn btn-primary" (click)="addNewDoctor()"
                         *ngIf="DoctorId==0" [disabled]="!editDoctorForm.valid">
-                    <input type="button" value="cancel" class="btn btn-warning" (click)="cancelEdit()">
+                    <input type="button" value="cancel" class="btn btn-warning" (click)="cancelBtn()">
                 </div>
 
             </form>

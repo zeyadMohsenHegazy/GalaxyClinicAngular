@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-10">
+            <h1 class="text-center text-primary mt-1 fs-3">All Specialities</h1>
+            <a (click)="addNewSpeciality()" class="btn btn-primary">Add New Speciality</a>
+            <table class="table table-bordered table-hover table-striped mt-2">
+                <thead>
+                    <tr>
+                        <th scope="col">Speciality Code</th>
+                        <th scope="col">Speciality Name</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let Speciality of specialities |  paginate
+                    : {
+                        itemsPerPage: 7,
+                        currentPage: pagination,
+                        totalItems: allSpecialities
+                      }; let i = index;">
+                        <td>{{Speciality.speciality_Code}}</td>
+                        <td>{{Speciality.speciality_Name}}</td>
+                        <td class="p-1">
+                            <a class="btn btn-info m-1" (click)="editRow(Speciality.speciality_Code)">Edit</a>
+                            <a class="btn btn-danger m-1" (click)="deleteRow(Speciality.speciality_Code)">Delete</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-center">
+                <pagination-controls (pageChange)="renderPage($event)"></pagination-controls>
+            </div>
+        </div>
+    </div>
+</div>

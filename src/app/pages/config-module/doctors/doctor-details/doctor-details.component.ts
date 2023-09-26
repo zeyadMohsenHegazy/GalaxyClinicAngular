@@ -85,7 +85,7 @@ export class DoctorDetailsComponent implements OnInit {
         next: (value) => {
           if (value.success) {
             this.toast.successState('updated successfully');
-            this.cancelEdit();
+            this.cancelBtn();
           }
         },
         error: () => {
@@ -93,7 +93,7 @@ export class DoctorDetailsComponent implements OnInit {
         },
       });
   }
-  cancelEdit() {
+  cancelBtn() {
     this.editDoctorForm.reset();
     this.rout.navigate(['pages/cofig/doctor/' + 0]);
   }
@@ -109,6 +109,7 @@ export class DoctorDetailsComponent implements OnInit {
         next: (value) => {
           if (value.success) {
             this.toast.successState('new doctor added');
+            this.cancelBtn();
           } else {
             this.toast.errorState('error happened');
           }

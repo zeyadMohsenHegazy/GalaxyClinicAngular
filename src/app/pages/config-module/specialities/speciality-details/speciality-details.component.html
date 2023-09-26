@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 col-sm-9">
+            <h1 class="text-primary text-center mt-2 fs-3">
+                {{formName}}
+            </h1>
+            <form class="form-group" [formGroup]="specialityForm">
+
+                <label for="speciality_Code" class="mt-2">Speciality Code:</label>
+                <input id="speciality_Code" class="form-control" type="text"
+                    [ngModel]="specialityDetails.speciality_Code" formControlName="speciality_Code"
+                    [class.is-invalid]="name?.invalid && (name?.dirty || name?.touched)" readonly>
+
+
+                <label for="speciality_Name" class="mt-2">Speciality Name:</label>
+                <input id="speciality_Name" class="form-control" type="text"
+                    [ngModel]="specialityDetails.speciality_Name" formControlName="speciality_Name"
+                    [class.is-invalid]="name?.invalid && (name?.dirty || name?.touched)">
+                <!-- <small class="text-danger d-block"
+                    *ngIf="name?.errors?.['required'] && (name?.dirty || name?.touched)">Name is
+                    Required</small>
+                <small class="text-danger d-block"
+                    *ngIf="name?.errors?.['minlength'] && (name?.dirty || name?.touched)"> name must be more than 5
+                    characters</small> -->
+
+
+                <div class="btn-group d-flex mt-2">
+                    <input type="button" value="save" class="btn btn-primary" (click)="saveSpecialityEdition()"
+                        *ngIf="SpecialityId>0" [disabled]="!specialityForm.valid">
+                    <input type="button" value="Add" class="btn btn-primary" (click)="addNewSpeciality()"
+                        *ngIf="SpecialityId==0" [disabled]="!specialityForm.valid">
+                    <input type="button" value="cancel" class="btn btn-warning" (click)="cancelBtn()">
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
