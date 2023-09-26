@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 col-sm-9">
+            <h1 class="text-primary text-center mt-2 fs-3">
+                {{formName}}
+            </h1>
+            <form class="form-group" [formGroup]="editDoctorForm">
+                <input type="hidden" name="Id" formControlName="Id" [ngModel]="doctorDetails.doctor_Code">
+
+                <label for="doctorName" class="mt-2">Doctor Name:</label>
+                <input id="doctorName" class="form-control" type="text" [ngModel]="doctorDetails.doctor_Name"
+                    formControlName="Doctor_Name" [class.is-invalid]="name?.invalid && (name?.dirty || name?.touched)">
+                <small class="text-danger d-block"
+                    *ngIf="name?.errors?.['required'] && (name?.dirty || name?.touched)">Name is
+                    Required</small>
+                <small class="text-danger d-block"
+                    *ngIf="name?.errors?.['minlength'] && (name?.dirty || name?.touched)"> name must be more than 4
+                    characters</small>
+                <!-- <label for="doctorSpeciality" class="mt-2">Doctor Speciality:</label>
+                <input id="doctorSpeciality" class="form-control" type="text" [ngModel]="doctorDetails.speciality_Name"
+                    formControlName="Speciality_Name"> -->
+
+
+                <label for="Specialities" class="mt-2">Doctor Specialities</label>
+                <app-doctor-specialitis id="Specialities"></app-doctor-specialitis>
+
+
+                <label for="doctorMobile" class="mt-2">Doctor Mobile Number:</label>
+                <input id="doctorMobile" class="form-control" type="text" [ngModel]="doctorDetails.mobileNumber"
+                    formControlName="mobileNumber"
+                    [class.is-invalid]="mobilNumber?.invalid && (mobilNumber?.dirty || mobilNumber?.touched)">
+                <small class="text-danger d-block"
+                    *ngIf="mobilNumber?.errors?.['required'] && (mobilNumber?.dirty || mobilNumber?.touched)">
+                    Mobile Number is Required</small>
+                <small class="text-danger d-block"
+                    *ngIf="mobilNumber?.errors?.['minlength'] && (mobilNumber?.dirty || mobilNumber?.touched)">mobile
+                    number should be 11 digit</small>
+                <small class="text-danger d-block"
+                    *ngIf="mobilNumber?.errors?.['maxlength'] && (mobilNumber?.dirty || mobilNumber?.touched)">mobile
+                    number should be 11 digit</small>
+
+                <label for="doctorEmail" class="mt-2">Doctor Email:</label>
+                <input id="doctorEmail" class="form-control" type="text" [ngModel]="doctorDetails.doctorEmail"
+                    formControlName="doctorEmail" [class.is-invalid]="mail?.invalid && (mail?.dirty || mail?.touched)">
+                <small class="text-danger d-block"
+                    *ngIf="mail?.errors?.['required'] && (mail?.dirty || mail?.touched)">Email Is required</small>
+                <small class="text-danger d-block"
+                    *ngIf="mobilNumber?.errors?.['email'] && (mail?.dirty || mail?.touched)">Please enter a valid
+                    email</small>
+
+
+                <div class="btn-group d-flex mt-2">
+                    <input type="button" value="save" class="btn btn-primary" (click)="saveDoctorEdition()"
+                        *ngIf="DoctorId>0" [disabled]="!editDoctorForm.valid">
+                    <input type="button" value="Add" class="btn btn-primary" (click)="addNewDoctor()"
+                        *ngIf="DoctorId==0" [disabled]="!editDoctorForm.valid">
+                    <input type="button" value="cancel" class="btn btn-warning" (click)="cancelEdit()">
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

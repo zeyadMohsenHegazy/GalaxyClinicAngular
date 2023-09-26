@@ -32,7 +32,6 @@ export function createtranslateLoader(http: HttpClient) {
     AppRoutingModule,
     BrowserAnimationsModule,
     RouterModule,
-    PagesModule,
     NgxPaginationModule,
     ToastrModule.forRoot(),
     SharedModuleModule,

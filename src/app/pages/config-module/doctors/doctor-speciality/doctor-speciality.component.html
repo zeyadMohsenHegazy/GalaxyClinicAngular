@@ -2,6 +2,7 @@
     <div class="row justify-content-center">
         <div class="col-10">
             <h1 class="text-center text-primary mt-1 fs-3">All the Doctors and thier specialities</h1>
+            <a (click)="addNewDoctor()" class="btn btn-primary">Add New Doctor</a>
             <table class="table table-bordered table-hover table-striped mt-2">
                 <thead>
                     <tr>
@@ -9,12 +10,14 @@
                         <th scope="col">Doctor Name</th>
                         <th scope="col">Speciality</th>
                         <th scope="col">Mobile Number</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let doctor of doctors |  paginate
                     : {
-                        itemsPerPage: 10,
+                        itemsPerPage: 7,
                         currentPage: pagination,
                         totalItems: allDoctors
                       }; let i = index;">
@@ -22,6 +25,11 @@
                         <td>{{doctor.doctor_Name}}</td>
                         <td>{{doctor.speciality_Name}}</td>
                         <td>{{doctor.mobileNumber}}</td>
+                        <td>{{doctor.doctorEmail}}</td>
+                        <td class="p-1">
+                            <a class="btn btn-info m-1" (click)="editRow(doctor.doctor_Code)">Edit</a>
+                            <a class="btn btn-danger m-1" (click)="deleteRow(doctor.doctor_Code)">Delete</a>
+                        </td>
                     </tr>
                 </tbody>
             </table>

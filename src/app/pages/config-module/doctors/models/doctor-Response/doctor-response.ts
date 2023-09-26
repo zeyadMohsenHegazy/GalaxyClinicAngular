@@ -3,4 +3,5 @@ export interface DoctorResponse {
   doctor_Name: string;
   speciality_Name: string;
   mobileNumber: string;
+  doctorEmail : string
 }

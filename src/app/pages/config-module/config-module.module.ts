@@ -8,6 +8,6 @@ import { DoctorsModule } from './doctors/doctors.module';
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, ConfigRoutingModule, FormsModule, DoctorsModule],
+  imports: [CommonModule, ConfigRoutingModule, FormsModule],
 })
 export class ConfigModuleModule {}
