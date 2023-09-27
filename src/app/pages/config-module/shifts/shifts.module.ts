@@ -6,6 +6,7 @@ import { ShiftTimesDetailsComponent } from './components/shift-times-details/shi
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [

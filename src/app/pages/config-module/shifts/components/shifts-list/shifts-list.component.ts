@@ -17,18 +17,18 @@ export class ShiftsListComponent implements OnInit {
     private userInfo: UserInfoService,
     private shiftService: ShiftsService
   ) {}
-  shiftsList: ShiftsResponse[] = [];
+  shifts: ShiftsResponse[] = [];
   allShifts: number = 0;
   pagination: number = 1;
   ngOnInit(): void {
     this.fetchAllDoctorsWithShifts();
-    console.log(this.shiftsList);
   }
   fetchAllDoctorsWithShifts() {
     this.shiftService.getAllShifts().subscribe({
       next: (value) => {
-        this.shiftsList = value.result;
-        this.allShifts = this.shiftsList.length;
+        this.shifts = value.result;
+        this.allShifts = this.shifts.length;
+        console.log(this.shifts);
       },
       error: () => {
         this.toast.errorState('something went wrong');
@@ -38,5 +38,8 @@ export class ShiftsListComponent implements OnInit {
   renderPage(event: number) {
     this.pagination = event;
     this.fetchAllDoctorsWithShifts();
+  }
+  shiftDetails(id: number) {
+    this.route.navigate(['pages/cofig/shiftDetails/' + id]);
   }
 }

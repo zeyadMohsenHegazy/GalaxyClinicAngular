@@ -1,44 +1,46 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-10">
+        <div class="col-12">
             <h1 class="text-center text-primary fs-3 mt-1">Doctors Shifts</h1>
             <a class="btn btn-primary">Add New Doctor Shift</a>
-            <table class="table table-bordered tablel-hover table-stipped">
+            <table class="table table-bordered mt-2 table-hover table-stipped">
                 <thead>
-                    <th scope="col">DoctorShiftCode</th>
-                    <th scope="col">Availble_Days</th>
-                    <th scope="col">Doctor_Name</th>
-                    <th scope="col">FromDate</th>
-                    <th scope="col">ToDate</th>
-                    <th scope="col">FromTime</th>
-                    <th scope="col">ToTime</th>
-                    <th scope="col">shiftTitle</th>
-                    <th scope="col">sessionDuration</th>
-                    <th scope="col">actions</th>
+                    <tr>
+                        <th scope="col">Doctor_Name</th>
+                        <th scope="col">DoctorShiftCode</th>
+                        <th scope="col">Availble_Days</th>
+                        <th scope="col">FromDate</th>
+                        <th scope="col">ToDate</th>
+                        <th scope="col">FromTime</th>
+                        <th scope="col">ToTime</th>
+                        <th scope="col">shiftTitle</th>
+                        <th scope="col">sessionDuration</th>
+                        <th scope="col">actions</th>
+                    </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let shift of shiftsList |paginate:{
+                    <tr *ngFor="let shift of shifts |paginate:{
                         itemsPerPage: 7,
                         currentPage: pagination,
                         totalItems : allShifts
                     }; let i = index">
-                        <td>{{shift.DoctorShiftCode}}</td>
-                        <td>{{shift.Availble_Days}}</td>
-                        <td>{{shift.Doctor_Name}}</td>
-                        <td>{{shift.FromDate}}</td>
-                        <td>{{shift.ToDate}}</td>
-                        <td>{{shift.FromTime}}</td>
-                        <td>{{shift.ToTime}}</td>
+                        <td>{{shift.doctor_Name}}</td>
+                        <td>{{shift.doctorShiftCode}}</td>
+                        <td>{{shift.availble_Days}}</td>
+                        <td>{{shift.fromDate | date: "shortDate"}}</td>
+                        <td>{{shift.toDate | date: "shortDate"}}</td>
+                        <td>{{shift.fromTime | date: "shortTime"}}</td>
+                        <td>{{shift.toTime | date: "shortTime"}}</td>
                         <td>{{shift.shiftTitle}}</td>
-                        <td>{{shift.sessionDuration}}</td>
+                        <td>{{shift.sessionDuration}} Minutes</td>
                         <td>
-                            <a class="btn btn-info">Details</a>
+                            <a class="btn btn-info" (click)="shiftDetails(shift.doctorShiftCode)">Details</a>
                         </td>
                     </tr>
                 </tbody>
             </table>
             <div class="d-flex justify-content-center">
-                <!-- <pagination-controls (pageChange)="renderPage($event)"></pagination-controls> -->
+                <pagination-controls (pageChange)="renderPage($event)"></pagination-controls>
             </div>
         </div>
     </div>

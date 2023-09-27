@@ -1,1 +1,17 @@
-<p>shift-times-details works!</p>
+
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th>shiftDayTimeCode</th>
+            <th>session_From</th>
+            <th>session_To</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let time of times">
+            <td>{{time.shiftDayTimeCode}}</td>
+            <td>{{time.session_From | date: 'shortTime'}}</td>
+            <td>{{time.session_To | date: 'shortTime'}}</td>
+        </tr>
+    </tbody>
+</table>

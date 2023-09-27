@@ -1,11 +1,14 @@
+import { ShiftDayResponse } from "./shift-day-response";
+
 export interface ShiftsResponse {
-    DoctorShiftCode : number,
-    Availble_Days : string,
-    Doctor_Name: string,
-    FromDate: Date,
-    ToDate : Date,
-    FromTime : Date,
-    ToTime : Date,
+    doctorShiftCode : number,
+    availble_Days : string,
+    doctor_Name: string,
+    fromDate: Date,
+    toDate : Date,
+    fromTime : Date,
+    toTime : Date,
     shiftTitle: string,
     sessionDuration : number,
+    shiftDays : ShiftDayResponse[]
 }

@@ -1,1 +1,51 @@
-<p>shifts-details works!</p>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-10">
+            <h1 class="text-center text-black fs-2 mt-2">Doctor Shift Days</h1>
+            <table class="table table-bordered mt-2 table-hover table-stipped">
+                <thead>
+                    <tr>
+                        <th scope="col">Shift Day Date</th>
+                        <th scope="col">Day Of Week</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let day of shiftDetails">
+                        <td>{{day.shiftDay | date: "shortDate"}}</td>
+                        <td>{{day.dayWeek}}</td>
+                        <td>
+                            <div class="btn-group">
+                                <a class="btn btn-danger" (click)="cancelShift(1)">cancel</a>
+                                <a class="btn btn-info" (click)="showDayTimesDetails(day.shiftDayCode)"
+                                    data-bs-toggle="modal" data-bs-target="#staticBackdrop">Details</a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+    <div class="modal-dialog">
+        <div class="modal-content  bg-dark">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 text-light" id="staticBackdropLabel">Shift Day Times Details</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-light">
+                <app-shift-times-details [shiftDayCode]="selectedShiftDayCode"
+                    [times]="Times"></app-shift-times-details>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <!-- <button type="button" class="btn btn-primary">Understood</button> -->
+            </div>
+        </div>
+    </div>
+</div>

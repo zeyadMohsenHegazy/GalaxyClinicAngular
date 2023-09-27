@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'specialityDetails/:id', component: SpecialityDetailsComponent },
   { path: 'shifts', component: ShiftsListComponent },
   { path: 'shiftDetails/:id', component: ShiftsDetailsComponent },
-  { path: 'shiftTimes/:id', component: ShiftTimesDetailsComponent },
+  { path: 'shiftTimes/:dayId', component: ShiftTimesDetailsComponent },
 ];
 
 @NgModule({
