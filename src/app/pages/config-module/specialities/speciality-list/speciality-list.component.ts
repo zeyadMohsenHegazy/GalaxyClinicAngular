@@ -18,7 +18,7 @@ export class SpecialityListComponent implements OnInit {
     private userInfo: UserInfoService,
     private specialityService: SpecialityService,
     private toast: ToasterInvokerService,
-    private route : Router
+    private route: Router
   ) {}
   specialities: SpecialityResponse[] = [];
   pagination: number = 1;
@@ -74,5 +74,7 @@ export class SpecialityListComponent implements OnInit {
     }
   }
   //--//
-  addNewSpeciality() {}
+  addNewSpeciality() {
+    this.route.navigate(['pages/cofig/specialityDetails/' + 0]);
+  }
 }

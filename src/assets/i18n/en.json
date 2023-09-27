@@ -20,9 +20,9 @@
         "PhoneNumber":"+20(1011583454)"
     },
     "sidebar":{
-        "Dashboard" : "Dashboard",
-        "Orders": "Reservations",
-        "Customers" : "Patients",
+        "Dashboard" : "Doctors",
+        "Orders": "Specialities",
+        "Customers" : "DoctorShifts",
         "Galaxy" : "Galaxy"
     },
     "demo":{

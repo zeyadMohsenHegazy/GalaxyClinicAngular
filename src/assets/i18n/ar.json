@@ -20,9 +20,9 @@
         "PhoneNumber":"01011598383"
     },
     "sidebar":{
-        "Dashboard" : "الاعدادات",
-        "Orders": "الحجوزات",
-        "Customers" : "المرضي",
+        "Dashboard" : "الأطباء",
+        "Orders": "التخصصات",
+        "Customers" : "المواعيد",
         "Galaxy" : "جالاكسي"
     },
     "demo":{

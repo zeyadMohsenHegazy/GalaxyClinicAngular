@@ -15,7 +15,7 @@ import { RouterModule } from '@angular/router';
     ReactiveFormsModule,
     FormsModule,
     SharedModuleModule,
-    RouterModule
+    RouterModule,
   ],
   providers: [SpecialityListComponent],
 })
